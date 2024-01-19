@@ -1,15 +1,45 @@
-<%= form_with model: @flat do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :price_per_night %>
-  <%= f.number_field :price_per_night %>
-  <%= f.label :number_of_guests %>
-  <%= f.number_field :number_of_guests %>
-  <%= f.submit 'Add Flat' %>
-<% end %>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-6 m-auto">
+      <div class="flat-form">
+        <h1>Add a new Flat</h1>
+        <div class="mt-3">
+         <%= simple_form_for(@flat) do |f| %>
 
-<%= link_to 'Back to All Flats', flats_path %>
+            <div class="flat-name">
+              <%= f.label :name, class:"w-100" %>
+              <%= f.text_field :name, class:"w-100 mb-2" %>
+            </div>
+
+            <div class="flat-address">
+              <%= f.label :address, class:"w-100" %>
+              <%= f.text_field :address, class:"w-100 mb-2" %>
+            </div>
+
+            <div class="flat-description">
+              <%= f.label :description, class:"w-100" %>
+              <%= f.text_area :description, class:"w-100 mb-2" %>
+            </div>
+
+            <div class="flat-image">
+              <%= f.label :image_url, class:"w-100" %>
+              <%= f.text_field :img_url, class:"w-100 mb-2" %>
+            </div>
+
+            <div class="flat-price">
+              <%= f.label :price_per_night, class:"w-100" %>
+              <%= f.number_field :price_per_night, class:"w-100 mb-2" %>
+            </div>
+
+            <div class="flat-guests">
+              <%= f.label :number_of_guests, class:"w-100" %>
+              <%= f.number_field :number_of_guests, class:"w-100 mb-2" %>
+            </div>
+
+            <%= f.submit "Update", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,18 +1,42 @@
-<div class="flats-container">
-  <% @flats.each do |flat| %>
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="<%= flat.img_url %>" alt="Flat Image">
-      <div class="card-body">
-        <h5 class="card-title"><%= flat.name %></h5>
-        <p class="card-text"><%= flat.address %></p>
-        <p><i class="fa-solid fa-euro-sign"></i> <%= flat.price_per_night %></p>
-        <p><i class="fa-solid fa-user-group"></i> <%= flat.number_of_guests %></p>
 
-        <%= link_to 'More Info', flat %>
-        <%= link_to 'Edit', edit_flat_path(flat) %>
-        <%= link_to "Delete", flat_path(flat),
-                    data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+<div class="flat-card row d-flex flex-wrap justify-content-center">
+  <h1 class="mt-3">All our flats</h1>
+    <p class="mb-3">All <%= @flats.count %> flats</p>
+    <% @flats.each do |flat| %>
+      <div class="col-sm mb-4 mx-1 px-0">
+        <div class="card-container">
+
+          <div class="card h-100">
+            <img class="card-img-top" src="<%= flat.img_url %>" alt="Flat Image">
+
+            <div class="content h-30">
+
+              <h5 class="card-title"><%= flat.name %></h5>
+              <p class="card-text"><%= flat.address %></p>
+
+              <div class="flex">
+                <div class="flex align-items-center">
+                  <i class="fa-solid fa-euro-sign"></i>
+                  <span><%= flat.price_per_night %></span>
+                </div>
+
+                <div class="flex align-items-center ms-3">
+                  <i class="fa-solid fa-people-line"></i>
+                  <span><%= flat.number_of_guests %></span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="actions p-3">
+              <%= link_to 'More Info', flat %>
+              <%= link_to 'Edit', edit_flat_path(flat), class:"ms-3" %>
+              <%= link_to "Delete", flat_path(flat), class:"ms-3",
+              data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+            </div>
+          </div>
+
+        </div>
       </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>

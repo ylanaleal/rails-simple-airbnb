@@ -21,4 +21,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_19_160557) do
     t.datetime "updated_at", null: false
     t.string "img_url"
   end
+
 end

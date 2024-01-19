@@ -13,3 +13,80 @@
  *= require_tree .
  *= require_self
  */
+.flex {
+  display: flex;
+}
+
+.flat-card {
+  margin: 0 100px 0 100px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  margin: 2px;
+}
+
+.card {
+  width: 350px;
+  flex-grow: 1;
+  position: relative;
+  margin: 0.5rem 1em 1rem 1em;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+  margin: 6px;
+}
+
+.content {
+  padding: 24px;
+  background-color: #F8F9FA;
+  flex-grow: 1;
+}
+
+.actions {
+  position: relative;
+  background-color: inherit;
+  border-top: 1px solid rgba(160,160,160,0.2);
+  padding: 16px 24px;
+}
+
+.card-img-top {
+  height: 180px;
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+}
+
+.flat-show-address {
+  font-weight: 300;
+  font-size: 20px;
+  color: #333;
+}
+
+.flat-show-card {
+  background: #F8F9FA;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  border-radius: 3px;
+}
+
+.flat-form {
+  background-color: #F8F9FA;
+  padding: 24px;
+  border-radius: 3px;
+}
+
+.map {
+  height: 350px;
+  background-position: center;
+  background-size: cover;
+}
+
+.margin-top-negative {
+  margin-top: -75px;
+}
+
+
